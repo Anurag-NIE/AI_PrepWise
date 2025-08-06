@@ -1,3 +1,4 @@
+// import { Params } from './../../node_modules/@types/express-serve-static-core/index.d';
 "use server";
 
 // import { auth, db } from "@/firebase/admin";
@@ -131,3 +132,41 @@ export async function isAuthenticated() {
   const user = await getCurrentUser();
   return !!user;  // check if user exists in boolean context
 }
+
+
+
+
+
+// general.action.ts
+
+// export async function getInterviewsByUserId(userId: string): Promise<Interview[] | null> {
+//   const interviews = await db
+//     .collection("interviews")
+//     .where("userId", "==", userId)
+//     .get();
+  
+//   return interviews.docs.map((doc) => ({
+//     id: doc.id,
+//     ...doc.data(),
+//   })) as Interview[];
+// }
+
+
+// export async function getLatestInterviews(
+//   Params: GetLatestInterviewsParams
+// ): Promise<Interview[] | null> {
+//   const { userId, limit = 20 } = Params;
+  
+//   const interviews = await db
+//     .collection("interviews")
+//     .orderBy("createdAt", "desc")
+//     .where("finalized", "==", true)
+//     .where("userId", "!=", userId)
+//     .limit(limit)
+//     .get();
+
+//   return interviews.docs.map((doc) => ({
+//     id: doc.id,
+//     ...doc.data(),
+//   })) as Interview[];
+// }
